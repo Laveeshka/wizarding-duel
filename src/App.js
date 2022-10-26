@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components"; //wrapper component to make theme variables available to the whole component tree
+import { GlobalStyles } from "./styles/globalStyles";
+import { theme } from "./styles/theme";
+//import routing components
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+//import hooks
+import { useState } from 'react';
+//import components
+import { Burger, Menu, Nav } from "./components";
 
+//pass GlobalStyles as a component to the app so that the app has access to all global styles
 function App() {
+  const [open, setOpen] = useState(false); //initial state is false since the menu ought to be hidden on mount
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div id="app" open={open}>
+        <GlobalStyles />
+        <BrowserRouter>
+          <Nav open={open} setOpen={setOpen}/>
+          <div>
+            <h1>
+              Welcome to Wizarding Duel! Elves are working in the background
+            </h1>
+          </div>
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
   );
 }
 
