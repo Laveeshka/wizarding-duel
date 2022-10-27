@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
 
     #app {
         display: flex;
-        gap: 6rem;
+        gap: 12rem;
         background: ${({theme}) => theme.primaryBackground}; 
         color: ${({theme}) => theme.primaryText};
         font-family: 'El Messiri', sans-serif;
