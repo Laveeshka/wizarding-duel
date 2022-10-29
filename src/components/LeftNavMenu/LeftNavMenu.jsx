@@ -1,9 +1,9 @@
-import { StyledMenu } from './Menu.styled';
+import { StyledLeftNavMenu } from './LeftNavMenu.styled';
 import { NavLink } from 'react-router-dom';
 
-function Menu({ open }) {
+function LeftNavMenu({ open }) {
     return (
-        <StyledMenu open={open}>
+        <StyledLeftNavMenu open={open}>
             <NavLink exact to="/">
                 Home
             </NavLink>
@@ -13,11 +13,8 @@ function Menu({ open }) {
             <NavLink to="/history">
                 History
             </NavLink>
-            {/* <a href="/">Home</a>
-            <a href="/">Duel</a>
-            <a href="/">History</a> */}
-        </StyledMenu>
+        </StyledLeftNavMenu>
     )
 }
 
-export default Menu;
+export default LeftNavMenu;

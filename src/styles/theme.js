@@ -5,6 +5,7 @@ export const theme = {
     primaryText: '#f0f9f4',
     primaryTextHover: '#748c86',
     primaryNavBackground: '#006666',
+    primaryBorder: '1px solid #f0f9f4',
     tablet: '768px',
     desktop: '1280px'
 }

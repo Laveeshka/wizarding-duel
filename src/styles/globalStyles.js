@@ -7,6 +7,8 @@ export const GlobalStyles = createGlobalStyle`
     html, body {
         margin: 0;
         padding: 0;
+        background: ${({theme}) => theme.primaryBackground}; 
+        color: ${({theme}) => theme.primaryText};
     }
 
     *, *::after, *::before {
@@ -14,11 +16,11 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     #app {
-        display: flex;
-        gap: 12rem;
-        background: ${({theme}) => theme.primaryBackground}; 
-        color: ${({theme}) => theme.primaryText};
+        
         font-family: 'El Messiri', sans-serif;
-        height: 100vh;
+    }
+
+    h1 {
+        margin: 0;
     }
     `

@@ -1,11 +1,11 @@
 import { StyledNav } from "./Nav.styled";
-import { Burger, Menu } from "../../components";
+import { Burger} from "../../components";
 
 function Nav({ open, setOpen }){
     return (
         <StyledNav open={open}>
             <Burger open={open} setOpen={setOpen}/>
-            <Menu open={open}/>
+            <div className="logo">Wizarding Duel</div>
         </StyledNav>
     )
 }
