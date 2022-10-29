@@ -7,11 +7,11 @@ import { useHistory, Link } from "react-router-dom";
 //import child components
 import { CharacterContainer } from "../../components";
 
-function Home() {
+function Home({charOne, charTwo, isChosen, setCharOne, setCharTwo, setIsChosen}) {
   //states for character1 and character2
-  const [charOne, setCharOne] = useState(null);
-  const [charTwo, setCharTwo] = useState(null);
-  const [isChosen, setIsChosen] = useState(false);
+//   const [charOne, setCharOne] = useState(null);
+//   const [charTwo, setCharTwo] = useState(null);
+//   const [isChosen, setIsChosen] = useState(false);
 
   console.log("Character one is: ", charOne);
   console.log("Character two is: ", charTwo);

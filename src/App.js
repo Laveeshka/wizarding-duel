@@ -12,6 +12,9 @@ import { Nav, Home, Duel, History } from "./components";
 //remember Switch will return the first matched path
 function App() {
   const [open, setOpen] = useState(false); //initial state is false since the menu ought to be hidden on mount
+  const [charOne, setCharOne] = useState(null);
+  const [charTwo, setCharTwo] = useState(null);
+  const [isChosen, setIsChosen] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
@@ -21,7 +24,14 @@ function App() {
           <Nav open={open} setOpen={setOpen} />
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home
+                charOne={charOne}
+                setCharOne={setCharOne}
+                charTwo={charTwo}
+                setCharTwo={setCharTwo}
+                isChosen={isChosen}
+                setIsChosen={setIsChosen}
+              />
             </Route>
             <Route path="/duel">
               <Duel />
