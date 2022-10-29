@@ -34,7 +34,9 @@ function App() {
               />
             </Route>
             <Route path="/duel">
-              <Duel />
+              <Duel 
+                isChosen={isChosen}
+              />
             </Route>
             <Route path="/history">
               <History />
