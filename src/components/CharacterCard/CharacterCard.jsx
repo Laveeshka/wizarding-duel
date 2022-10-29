@@ -22,16 +22,16 @@ function CharacterCard({ character, charOne, setCharOne, charTwo, setCharTwo, on
     
     function handleCharacterClick(){
         if(!charOne){
-            console.log("I am falsey hee");
-            setCharOne(() => setCharOne(character));
+            //console.log("I am falsey hee");
+            setCharOne(character);
         }
         else{
-            setCharTwo(() => setCharTwo(character));
+            setCharTwo(character);
             onCharacterChosen();
         }
         
-        console.log("Character one is: ", charOne);
-        console.log("Character two is: ", charTwo);
+        //onsole.log("Character one is: ", charOne);
+        //console.log("Character two is: ", charTwo);
     }
 
     return (

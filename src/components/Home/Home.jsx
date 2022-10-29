@@ -2,6 +2,8 @@ import { useState } from "react";
 import { StyledHome } from "./Home.styled";
 //import the useQuery custom hook to fetch characters data from the API
 import useQuery from "../../hooks/useQuery";
+//import(s) from react-router-dom
+import { useHistory, Link } from "react-router-dom";
 //import child components
 import { CharacterContainer } from "../../components";
 
@@ -10,41 +12,53 @@ function Home() {
   const [charOne, setCharOne] = useState(null);
   const [charTwo, setCharTwo] = useState(null);
   const [isChosen, setIsChosen] = useState(false);
-  // Reset choice of characters 
+
+  console.log("Character one is: ", charOne);
+  console.log("Character two is: ", charTwo);
+//console.log("isChosen is: ", isChosen);
+  // Reset choice of characters
   // Can you compute it based on any other state or props in your component? -- YES, based on isChosen
   // If isChosen is true, show reset choice button
 
+  //use the `useNavigate()` hook
+  const history = useHistory();
 
   const baseCharacterUrl = "https://hp-api.herokuapp.com/api/characters";
   const { data: charactersData, isLoaded } = useQuery(baseCharacterUrl);
   //console.log(charactersData);
 
-  function handleGetStartedBtnClick() {
-    if (charTwo) {
-      setIsChosen((prevState) => setIsChosen(!prevState));
-    }
-    console.log("isChosen is: ", isChosen);
+  function handleChosenCharacters() {
+      setIsChosen(prevState => !prevState);
+      console.log("isChosen is: ", isChosen);
+    
   }
 
   //set charOne and charTwo to null
   //set isChosen to false
-  function handleResetChoiceClick(){
+  function handleResetChoiceClick() {
     setCharOne(() => setCharOne(null));
     setCharTwo(() => setCharTwo(null));
     setIsChosen((prevState) => !prevState);
   }
 
-  function handleDuelStart(){
-
-  }
+//   function handleDuelStart() {
+//     history.push("/duel");
+//     console.log("Character one is: ", charOne);
+//     console.log("Character two is: ", charTwo);
+//   }
 
   return (
     <StyledHome>
       <h2>Choose two wizards to duel</h2>
       <span>Wizard One: {!charOne ? "Not yet selected!" : charOne.name} </span>
       <span>Wizard Two: {!charTwo ? "Not yet selected!" : charTwo.name} </span>
-      <button disabled={isChosen ? false : true} onClick={handleDuelStart}>Get Started!</button>
-      {isChosen ? (<button onClick={handleResetChoiceClick}>Choose again</button>) : null}
+      {isChosen? (<Link to="/duel">Get Started!</Link>) : null}
+      {/* <Link to="/duel" disabled={isChosen ? false : true}>
+        Get Started!
+      </Link> */}
+      {isChosen ? (
+        <button onClick={handleResetChoiceClick}>Choose again</button>
+      ) : null}
       {isLoaded ? (
         <CharacterContainer
           characters={charactersData}
@@ -52,7 +66,7 @@ function Home() {
           setCharOne={setCharOne}
           charTwo={charTwo}
           setCharTwo={setCharTwo}
-          onCharacterChosen={handleGetStartedBtnClick}
+          onCharacterChosen={handleChosenCharacters}
         />
       ) : (
         <h3>Loading...</h3>
