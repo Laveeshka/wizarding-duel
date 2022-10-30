@@ -5,6 +5,7 @@ import { theme } from "./styles/theme";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 //import hooks
 import { useState } from "react";
+import useQuery from "./hooks/useQuery";
 //import components
 import { Nav, Home, Duel, History } from "./components";
 
@@ -15,6 +16,13 @@ function App() {
   const [charOne, setCharOne] = useState(null);
   const [charTwo, setCharTwo] = useState(null);
   const [isChosen, setIsChosen] = useState(false);
+
+  //GET spells from API here
+  //then, append a random points to each spell object
+  //pass the updated spells array as a prop to the Duel component
+  const baseSpellsUrl = "https://hp-api.herokuapp.com/api/spells";
+  const { data: spells, isLoaded } = useQuery(baseSpellsUrl);
+  //console.log("Spells data is: ",spells);
 
   return (
     <ThemeProvider theme={theme}>
@@ -36,6 +44,7 @@ function App() {
             <Route path="/duel">
               <Duel 
                 isChosen={isChosen}
+                spells={spells}
               />
             </Route>
             <Route path="/history">

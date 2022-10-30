@@ -13,24 +13,19 @@ function Home({charOne, charTwo, isChosen, setCharOne, setCharTwo, setIsChosen})
 //   const [charTwo, setCharTwo] = useState(null);
 //   const [isChosen, setIsChosen] = useState(false);
 
-  console.log("Character one is: ", charOne);
-  console.log("Character two is: ", charTwo);
+//   console.log("Character one is: ", charOne);
+//   console.log("Character two is: ", charTwo);
 //console.log("isChosen is: ", isChosen);
   // Reset choice of characters
   // Can you compute it based on any other state or props in your component? -- YES, based on isChosen
   // If isChosen is true, show reset choice button
 
-  //use the `useNavigate()` hook
-  const history = useHistory();
-
   const baseCharacterUrl = "https://hp-api.herokuapp.com/api/characters";
   const { data: charactersData, isLoaded } = useQuery(baseCharacterUrl);
-  //console.log(charactersData);
 
   function handleChosenCharacters() {
       setIsChosen(prevState => !prevState);
-      console.log("isChosen is: ", isChosen);
-    
+    //   console.log("isChosen is: ", isChosen);
   }
 
   //set charOne and charTwo to null
@@ -40,12 +35,6 @@ function Home({charOne, charTwo, isChosen, setCharOne, setCharTwo, setIsChosen})
     setCharTwo(() => setCharTwo(null));
     setIsChosen((prevState) => !prevState);
   }
-
-//   function handleDuelStart() {
-//     history.push("/duel");
-//     console.log("Character one is: ", charOne);
-//     console.log("Character two is: ", charTwo);
-//   }
 
   return (
     <StyledHome>
