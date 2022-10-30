@@ -44,6 +44,8 @@ function App() {
             <Route path="/duel">
               <Duel 
                 isChosen={isChosen}
+                charOne={charOne}
+                charTwo={charTwo}
                 spells={spells}
               />
             </Route>

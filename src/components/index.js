@@ -7,3 +7,5 @@ export { default as Duel } from './Duel';
 export { default as History } from './History';
 export { default as CharacterContainer } from './CharacterContainer';
 export { default as CharacterCard } from './CharacterCard';
+export { default as ChosenCharacters } from './ChosenCharacters';
+export { default as ChosenCharacterCard } from './ChosenCharacterCard';
