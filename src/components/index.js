@@ -1,3 +1,5 @@
+import SavedDuelCard from './SavedDuelCard/SavedDuelCard';
+
 //This file will allow us to import components from one file
 export { default as Burger } from './Burger';
 export { default as LeftNavMenu } from './LeftNavMenu';
@@ -11,3 +13,5 @@ export { default as ChosenCharacters } from './ChosenCharacters';
 export { default as ChosenCharacterCard } from './ChosenCharacterCard';
 export { default as RoundsContainer } from './RoundsContainer';
 export { default as CharacterScore } from './CharacterScore';
+export { default as SaveDuelForm } from './SaveDuelForm';
+export { default as SavedDuelCard } from './SavedDuelCard';

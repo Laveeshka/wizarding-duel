@@ -4,7 +4,6 @@ import { StyledHome } from "./Home.styled";
 import useQuery from "../../hooks/useQuery";
 //import(s) from react-router-dom
 import { useHistory, Link } from "react-router-dom";
-//import child components
 import { CharacterContainer } from "../../components";
 
 function Home({charOne, charTwo, isChosen, setCharOne, setCharTwo, setIsChosen}) {

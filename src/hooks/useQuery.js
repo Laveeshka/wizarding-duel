@@ -13,23 +13,22 @@ function useQuery(url) {
       .then((res) => res.json())
       .then((data) => {
         if (url === "https://hp-api.herokuapp.com/api/characters") {
-          //filter characters who belong to a house
+          //filter characters who belong to a house and have an image
           const houseSortedData = data.filter(
             (character) => character.house !== "" && character.image !== ""
           );
           setData(houseSortedData);
-        } else if (url === "https://hp-api.herokuapp.com/api/spells"){
-            const spellsArray = [];
-            for (let spell of data){
-              const randomNum = getRandom(1, 10);
-              const updatedSpell = {...spell, points: randomNum};
-              //console.log("Updated spell is ", updatedSpell);
-              spellsArray.push(updatedSpell);
-            }
-            //console.log("spellsArray is ", spellsArray);
-            setData(spellsArray);
-        }
-        else {
+        } else if (url === "https://hp-api.herokuapp.com/api/spells") {
+          const spellsArray = [];
+          for (let spell of data) {
+            const randomNum = getRandom(1, 10);
+            const updatedSpell = { ...spell, points: randomNum };
+            //console.log("Updated spell is ", updatedSpell);
+            spellsArray.push(updatedSpell);
+          }
+          //console.log("spellsArray is ", spellsArray);
+          setData(spellsArray);
+        } else {
           setData(data);
         }
         setIsLoaded(true);

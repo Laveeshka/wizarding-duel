@@ -1,5 +1,5 @@
 import { StyledRoundsContainer } from "./RoundsContainer.styled";
-import { CharacterScore } from "../../components";
+import { CharacterScore, SaveDuelForm } from "../../components";
 import { useState, useEffect, useRef } from "react";
 
 function RoundsContainer({ charOne, charTwo, spells }) {
@@ -61,6 +61,13 @@ function RoundsContainer({ charOne, charTwo, spells }) {
       {showOutcome ? (
         <div>
           <p>{outcomeMessage.current}</p>
+          <SaveDuelForm
+            charOne={charOne}
+            charOnePoints={charOnePoints}
+            charTwo={charTwo}
+            charTwoPoints={charTwoPoints}
+            outcome={outcomeMessage.current}
+          />
         </div>
       ) : null}
     </StyledRoundsContainer>
