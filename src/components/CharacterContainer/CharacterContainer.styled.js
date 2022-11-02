@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const StyledCharacterContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 1.5rem 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
 `

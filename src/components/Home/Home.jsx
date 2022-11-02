@@ -6,25 +6,19 @@ import useQuery from "../../hooks/useQuery";
 import { useHistory, Link } from "react-router-dom";
 import { CharacterContainer } from "../../components";
 
-function Home({charOne, charTwo, isChosen, setCharOne, setCharTwo, setIsChosen}) {
-  //states for character1 and character2
-//   const [charOne, setCharOne] = useState(null);
-//   const [charTwo, setCharTwo] = useState(null);
-//   const [isChosen, setIsChosen] = useState(false);
-
-//   console.log("Character one is: ", charOne);
-//   console.log("Character two is: ", charTwo);
-//console.log("isChosen is: ", isChosen);
-  // Reset choice of characters
-  // Can you compute it based on any other state or props in your component? -- YES, based on isChosen
-  // If isChosen is true, show reset choice button
-
+function Home({
+  charOne,
+  charTwo,
+  isChosen,
+  setCharOne,
+  setCharTwo,
+  setIsChosen,
+}) {
   const baseCharacterUrl = "https://hp-api.herokuapp.com/api/characters";
   const { data: charactersData, isLoaded } = useQuery(baseCharacterUrl);
 
   function handleChosenCharacters() {
-      setIsChosen(prevState => !prevState);
-    //   console.log("isChosen is: ", isChosen);
+    setIsChosen((prevState) => !prevState);
   }
 
   //set charOne and charTwo to null
@@ -40,7 +34,7 @@ function Home({charOne, charTwo, isChosen, setCharOne, setCharTwo, setIsChosen})
       <h2>Choose two wizards to duel</h2>
       <span>Wizard One: {!charOne ? "Not yet selected!" : charOne.name} </span>
       <span>Wizard Two: {!charTwo ? "Not yet selected!" : charTwo.name} </span>
-      {isChosen? (<Link to="/duel">Get Started!</Link>) : null}
+      {isChosen ? <Link to="/duel">Get Started!</Link> : null}
       {/* <Link to="/duel" disabled={isChosen ? false : true}>
         Get Started!
       </Link> */}
@@ -55,6 +49,7 @@ function Home({charOne, charTwo, isChosen, setCharOne, setCharTwo, setIsChosen})
           charTwo={charTwo}
           setCharTwo={setCharTwo}
           onCharacterChosen={handleChosenCharacters}
+          isChosen={isChosen}
         />
       ) : (
         <h3>Loading...</h3>

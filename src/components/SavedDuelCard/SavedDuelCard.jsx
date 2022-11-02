@@ -13,7 +13,7 @@ function SavedDuelCard({ savedDuel }) {
       <p>
         {charTwo.name} scored {charTwoPoints}
       </p>
-      <small>Your commented: {feedback}</small>
+      <small>You commented: {feedback}</small>
     </StyledSavedDuelCard>
   );
 }

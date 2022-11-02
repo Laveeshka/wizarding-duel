@@ -33,7 +33,10 @@ function SaveDuelForm({
       body: JSON.stringify(newSavedDuel),
     })
       .then((res) => res.json())
-      .then((savedDuel) => console.log(savedDuel));
+      .then((savedDuel) => {
+        console.log(savedDuel);
+        alert("Duel successfully saved!");
+      });
   }
   return (
     <StyledSaveDuelForm>

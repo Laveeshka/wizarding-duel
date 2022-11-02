@@ -1,45 +1,35 @@
-
 import { StyledCharacterCard } from "./CharacterCard.styled";
-import witchImg from "./../../images/witch_placeholder_img.svg";
-import wizardImg from "./../../images/wizard_placeholder_img.svg";
+import { useState } from 'react';
 
-function CharacterCard({ character, charOne, setCharOne, charTwo, setCharTwo, onCharacterChosen }){
+function CharacterCard({ character, charOne, setCharOne, charTwo, setCharTwo, onCharacterChosen, isChosen}){
     //destructure properties that we need from character object
-    const { name, house, image, gender } = character;
-    //let source;
+    const { name, house, image} = character;
+    const [isClicked, setIsClicked] = useState(false);
 
-    // if (image === ""){
-    //     if(gender === "female"){
-    //         source = witchImg;
-    //     }
-    //     else {
-    //         source = wizardImg;
-    //     }
-    // }
-    // else {
-    //     source = image;
-    // }
-    
     function handleCharacterClick(){
-        if(!charOne){
-            //console.log("I am falsey hee");
-            setCharOne(character);
-        }
-        else{
-            setCharTwo(character);
-            onCharacterChosen();
-        }
-        
-        //onsole.log("Character one is: ", charOne);
-        //console.log("Character two is: ", charTwo);
+        if (!isChosen){
+            if(!charOne){
+                setCharOne(character);
+                //new line
+                setIsClicked(true);
+            }
+            else{
+                setCharTwo(character);
+                setIsClicked(true);
+                onCharacterChosen();
+            }
+        } 
     }
 
     return (
-        <StyledCharacterCard>
+        <StyledCharacterCard onClick={handleCharacterClick} isClicked={isClicked}>
             <img alt={name} src={image}></img>
             <h3>{name}</h3>
-            <p>{house}</p>
-            <button onClick={handleCharacterClick}>Choose</button>
+            <div>
+                <h2>{house[0]}</h2>
+            </div>
+            <span>Dueller 1</span>
+            {/* <button onClick={handleCharacterClick}>Choose</button> */}
         </StyledCharacterCard>
     )
 }

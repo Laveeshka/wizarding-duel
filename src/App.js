@@ -42,7 +42,7 @@ function App() {
               />
             </Route>
             <Route path="/duel">
-              <Duel 
+              <Duel
                 isChosen={isChosen}
                 charOne={charOne}
                 charTwo={charTwo}
