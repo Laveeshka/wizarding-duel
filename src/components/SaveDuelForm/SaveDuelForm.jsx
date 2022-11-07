@@ -50,7 +50,7 @@ function SaveDuelForm({
           type="text"
           id="feedback"
           name="feedback"
-          placeholder="Enter something"
+          placeholder="Enter your feedback"
           onChange={handleChange}
         ></input>
         <button className="form-btn" type="submit">Save duel outcome</button>
