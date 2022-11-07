@@ -1,15 +1,25 @@
 import styled from "styled-components";
 
 export const StyledChosenCharacterCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    width: fit-content;
+    position: relative;
 
-  img {
-    width: 80%;
-    height: 15rem;
-    object-fit: fill;
-    overflow: hidden;
-    border-radius: 1rem;
-  }
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      border: 6px solid ${({ theme }) => theme.savedDuelCardImgColor};
+    }
+
+    span {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      white-space: nowrap;
+      background-color: ${({ theme }) => theme.savedDuelCardImgColor};
+      padding: 0.2rem 0.5rem;
+      border-radius: 1rem;
+    }
 `;

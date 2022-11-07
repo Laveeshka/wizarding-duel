@@ -1,8 +1,14 @@
 import styled from "styled-components";
 
 export const StyledDuel = styled.div`
-  
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+
   a {
+    width: fit-content;
     text-decoration: none;
     font-size: 1.4rem;
     font-weight: 600;
