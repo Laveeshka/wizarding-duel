@@ -5,7 +5,7 @@ export const StyledHistory = styled.section`
   width: 100%;
   margin-right: 0;
   margin-left: 0;
-  padding: 1.5rem 10vw;
+  padding: 1.5rem 5vw;
 
   h2 {
     text-align: center;
