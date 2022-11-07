@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom';
 function LeftNavMenu({ open }) {
     return (
         <StyledLeftNavMenu open={open}>
-            <NavLink exact to="/">
+            <NavLink exact to="/" activeClassName="selected">
                 Home
             </NavLink>
-            <NavLink to="/duel">
+            <NavLink to="/duel" activeClassName="selected">
                 Duel
             </NavLink>
-            <NavLink to="/history">
+            <NavLink to="/history" activeClassName="selected">
                 History
             </NavLink>
         </StyledLeftNavMenu>

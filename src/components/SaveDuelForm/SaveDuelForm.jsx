@@ -16,12 +16,15 @@ function SaveDuelForm({
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    const dateTime = new Date().toLocaleString('en-GB', { timeZone: 'UTC' });
     const newSavedDuel = {
       charOne,
       charOnePoints,
       charTwo,
       charTwoPoints,
       outcome,
+      dateTime,
       feedback,
     };
 

@@ -5,8 +5,10 @@ export const StyledCharacterContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding: 1rem 1.5rem 2rem;
+    padding: 1.5rem 5vw;
     margin-top: 1rem;
+    margin-right: 0;
+    margin-left: 0;
     flex-wrap: wrap;
     width: 100%;
 `

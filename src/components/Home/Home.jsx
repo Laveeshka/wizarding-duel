@@ -31,16 +31,30 @@ function Home({
 
   return (
     <StyledHome>
-      <h2>Choose two wizards to duel</h2>
-      <span>Wizard One: {!charOne ? "Not yet selected!" : charOne.name} </span>
-      <span>Wizard Two: {!charTwo ? "Not yet selected!" : charTwo.name} </span>
-      {isChosen ? <Link to="/duel">Get Started!</Link> : null}
-      {/* <Link to="/duel" disabled={isChosen ? false : true}>
-        Get Started!
-      </Link> */}
-      {isChosen ? (
-        <button onClick={handleResetChoiceClick}>Choose again</button>
-      ) : null}
+      <header>
+        <h2>Wizarding Duel</h2>
+        <h3>Choose two wizards for duel</h3>
+        <div className="dueller-container">
+          <div className="dueller">
+            <div className="text-italic">First dueller</div>
+            <div className="dueller-name">
+              {!charOne ? "Not yet selected!" : charOne.name}
+            </div>
+          </div>
+          <div className="dueller">
+            <div className="text-italic">Second dueller</div>
+            <div className="dueller-name">
+              {!charTwo ? "Not yet selected!" : charTwo.name}
+            </div>
+          </div>
+        </div>
+        <div className="button-container">
+          {isChosen ? <Link to="/duel">Start Duel</Link> : null}
+          {isChosen ? (
+            <button onClick={handleResetChoiceClick}>Choose again</button>
+          ) : null}
+        </div>
+      </header>
       {isLoaded ? (
         <CharacterContainer
           characters={charactersData}
@@ -52,7 +66,7 @@ function Home({
           isChosen={isChosen}
         />
       ) : (
-        <h3>Loading...</h3>
+        <h3 className="loading">Loading...</h3>
       )}
     </StyledHome>
   );

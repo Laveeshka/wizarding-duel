@@ -15,7 +15,7 @@ export const StyledCharacterCard = styled.div`
     box-shadow: inset 0 -6px 0 #012721;
     position: relative;
     overflow: hidden;
-    border: ${({ isClicked }) => isClicked? "5px solid #95C6BF" : "none"};
+    border: ${({ isClicked, theme }) => isClicked? theme.cardBorder : "none"};
     transform: ${({ isClicked }) => isClicked? "translateY(-0.5rem)" : "translateY(0)"};
     transition: transform 0.3s, background-color: 0.3s, border 0.3s;
 
@@ -31,7 +31,7 @@ export const StyledCharacterCard = styled.div`
     }
 
     &:hover {
-        background-color: ;
+        background-color: #04463b;
         transform: translateY(-0.5rem);
     }
 

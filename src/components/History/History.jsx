@@ -10,14 +10,16 @@ function History() {
   return (
     <StyledHistory>
       <h2>Your saved duels</h2>
-      {isLoaded
-        ? savedDuels.map((savedDuel) => (
+      {isLoaded ? (
+        <div className="saved-duels-container">
+          {savedDuels.map((savedDuel) => (
             <SavedDuelCard
               key={savedDuel.id}
               savedDuel={savedDuel}
             ></SavedDuelCard>
-          ))
-        : null}
+          ))}
+        </div>
+      ) : null}
     </StyledHistory>
   );
 }

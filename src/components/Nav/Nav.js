@@ -5,7 +5,7 @@ function Nav({ open, setOpen }){
     return (
         <StyledNav open={open}>
             <Burger open={open} setOpen={setOpen}/>
-            <div className="logo">Wizarding Duel</div>
+            {/* <div className="logo">Wizarding Duel</div> */}
         </StyledNav>
     )
 }
