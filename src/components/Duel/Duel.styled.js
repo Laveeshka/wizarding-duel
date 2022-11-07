@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
 export const StyledDuel = styled.div`
-  width: 100%;
-  margin-right: 0;
-  margin-left: 0;
-  padding: 1.5rem 5vw;
-
+  
   a {
     text-decoration: none;
     font-size: 1.4rem;

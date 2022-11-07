@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../styles/theme";
 import maskBlock from "../../images/mask_block.svg"
 
 export const StyledSavedDuelCard = styled.div`

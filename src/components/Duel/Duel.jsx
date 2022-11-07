@@ -1,6 +1,8 @@
 import { Redirect, Route, useRouteMatch, Link } from "react-router-dom";
 import { useState } from 'react';
-import { StyledDuel } from "./Duel.styled";
+import { StyledDuel} from "./Duel.styled";
+import { StyledLink } from "./Link.styled";
+import { StyledSection } from "./Section.styled";
 import { ChosenCharacters, RoundsContainer } from "../../components";
 
 function Duel({ isChosen, charOne, charTwo, spells }) {
@@ -17,7 +19,7 @@ function Duel({ isChosen, charOne, charTwo, spells }) {
   }
 
   return (
-    <>
+    <StyledSection>
       {isChosen ? (
         <StyledDuel>
           <ChosenCharacters charOne={charOne} charTwo={charTwo} />
@@ -33,11 +35,11 @@ function Duel({ isChosen, charOne, charTwo, spells }) {
           </Route>
         </StyledDuel>
       ) : (
-        <Link className="redirect-link" exact to={"/"}>
+        <StyledLink className="redirect-link" exact to={"/"}>
           Choose two wizards first!
-        </Link>
+        </StyledLink>
       )}
-    </>
+    </StyledSection>
   );
 }
 
