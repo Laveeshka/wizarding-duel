@@ -39,7 +39,7 @@ function RoundsContainer({ charOne, charTwo, spells }) {
   return (
     <StyledRoundsContainer>
       <h2>Round {round} of 3</h2>
-      <div>
+      <div className="spells-container">
         <CharacterScore
           char={charOne}
           spells={spells}

@@ -28,10 +28,16 @@ function CharacterScore({ char, spells, onAddPoints, isComplete }){
 
     return (
         <StyledCharacterScore>
-            <h3>{char.name}</h3>
-            <p>Spell used: {randomSpell.current.name}</p>
-            <p>Spell points: {randomSpell.current.points}</p>
-            <p>Total points: {totalPoints.current}</p>
+            <div className="total-points-container">
+                <div>{totalPoints.current}</div>
+            </div>
+            {/* <h3>{char.name}</h3> */}
+            <div className="spell-container">
+            <p>Used {randomSpell.current.name.toUpperCase()}</p>
+            <p>Gained {randomSpell.current.points} points</p>
+            {/* <p>Total points: {totalPoints.current}</p> */}
+            </div>
+            
         </StyledCharacterScore>
     )
 }
