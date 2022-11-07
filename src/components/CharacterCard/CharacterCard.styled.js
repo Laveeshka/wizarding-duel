@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import ornamentalBorder from "./../../images/ornamental_border.svg";
-import { theme } from "../../styles/theme";
 
 export const StyledCharacterCard = styled.div`
     display: flex;
@@ -50,7 +49,20 @@ export const StyledCharacterCard = styled.div`
     }
 
     div {
-        background-color: #2C514C;
+        background-color: ${({ house }) => {
+            switch (house) {
+                case "Gryffindor":
+                    return "#a72608";
+                case "Ravenclaw":
+                    return "#386fa4";
+                case "Hufflepuff":
+                    return "#d5ac4e";
+                case "Slytherin":
+                    return "#2C514C";
+                default:
+                    return "#2C514C";
+            }
+        }};
         position: absolute;
         top: -6rem;
         left: -6rem;

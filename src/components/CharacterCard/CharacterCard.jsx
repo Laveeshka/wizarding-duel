@@ -22,7 +22,7 @@ function CharacterCard({ character, charOne, setCharOne, charTwo, setCharTwo, on
     }
 
     return (
-        <StyledCharacterCard onClick={handleCharacterClick} isClicked={isClicked}>
+        <StyledCharacterCard house={house} onClick={handleCharacterClick} isClicked={isClicked}>
             <img alt={name} src={image}></img>
             <h3>{name}</h3>
             <div>
