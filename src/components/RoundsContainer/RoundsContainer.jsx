@@ -59,8 +59,8 @@ function RoundsContainer({ charOne, charTwo, spells }) {
         <button onClick={handleNextRoundClick}>Next round</button>
       )}
       {showOutcome ? (
-        <div>
-          <p>{outcomeMessage.current}</p>
+        <div className="outcome-container">
+          <h1>{outcomeMessage.current}</h1>
           <SaveDuelForm
             charOne={charOne}
             charOnePoints={charOnePoints}

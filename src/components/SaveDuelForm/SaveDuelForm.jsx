@@ -44,14 +44,16 @@ function SaveDuelForm({
   return (
     <StyledSaveDuelForm>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="feedback">Leave any feedback</label>
+        <label htmlFor="feedback">What are your thoughts on this duel?
+        </label>
         <input
           type="text"
           id="feedback"
           name="feedback"
+          placeholder="Enter something"
           onChange={handleChange}
         ></input>
-        <button type="submit">Save duel outcome</button>
+        <button className="form-btn" type="submit">Save duel outcome</button>
       </form>
     </StyledSaveDuelForm>
   );

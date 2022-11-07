@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import outcomeMask from "../../images/outcome_mask.svg";
 
 export const StyledRoundsContainer = styled.section`
   width: 100%;
@@ -26,7 +27,7 @@ export const StyledRoundsContainer = styled.section`
   button {
     width: fit-content;
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 600;
     padding: 0.5rem 1.2rem;
     border-radius: 1rem;
@@ -46,5 +47,27 @@ export const StyledRoundsContainer = styled.section`
         top: 4px;
         box-shadow: 0 0 ${({ theme }) => theme.buttonAccentBoxShadowColor};
     }
+}
+
+.outcome-container {
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 70%;
+    height: auto;
+    background-color: #44305f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 2rem;
+    -webkit-mask-image: url("${outcomeMask}");
+    -webkit-mask-size: cover;
+
+    h1 {
+      font-size: 1.7rem;
+    }
+
 }
 `;
