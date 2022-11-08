@@ -21,7 +21,9 @@ export const StyledSavedDuelCard = styled.div`
     h3 {
         text-align: center;
         font-weight: 800;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
     }
 
     div.characters-container {
@@ -86,6 +88,7 @@ export const StyledSavedDuelCard = styled.div`
         small {
             text-align: center;
             font-style: italic;
+            font-size: 1rem;
         }
     }
 `

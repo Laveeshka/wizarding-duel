@@ -10,11 +10,26 @@ export const StyledCharacterCard = styled.div`
     height: 25rem;
     padding: 1rem;
     border-radius: 1rem;
-    background-color: ${({ isClicked }) => isClicked? "#04463b" : "#01372e"};
+    background-color: ${({ isClicked}) => 
+        {
+            if (isClicked){
+                return "#04463b";
+            }
+            else {
+                return "#01372e";
+            }
+        }};
     box-shadow: inset 0 -6px 0 #012721;
     position: relative;
     overflow: hidden;
-    border: ${({ isClicked, theme }) => isClicked? theme.cardBorder : "none"};
+    border: ${({ isClicked, theme }) => {
+        if (isClicked ){
+            return theme.cardBorder;
+        }
+        else {
+            return "none";
+        }
+    }};
     transform: ${({ isClicked }) => isClicked? "translateY(-0.5rem)" : "translateY(0)"};
     transition: transform 0.3s, background-color: 0.3s, border 0.3s;
 
@@ -85,3 +100,7 @@ export const StyledCharacterCard = styled.div`
         display: none;
     }
 `;
+
+//     isClicked? "#04463b" : "#01372e"
+
+// isClicked? theme.cardBorder : "none"

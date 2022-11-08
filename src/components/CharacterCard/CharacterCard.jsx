@@ -7,10 +7,9 @@ function CharacterCard({ character, charOne, setCharOne, charTwo, setCharTwo, on
     const [isClicked, setIsClicked] = useState(false);
 
     function handleCharacterClick(){
-        if (!isChosen){
+        if (!isClicked){
             if(!charOne){
                 setCharOne(character);
-                //new line
                 setIsClicked(true);
             }
             else{
@@ -19,10 +18,21 @@ function CharacterCard({ character, charOne, setCharOne, charTwo, setCharTwo, on
                 onCharacterChosen();
             }
         } 
+        //new code
+        if (isClicked){
+            setIsClicked(false);
+            if (charTwo){
+                setCharTwo(null);
+                onCharacterChosen();
+            }
+            else {
+                setCharOne(null);
+            }
+        }
     }
 
     return (
-        <StyledCharacterCard house={house} onClick={handleCharacterClick} isClicked={isClicked}>
+        <StyledCharacterCard house={house} onClick={handleCharacterClick} isClicked={isClicked} isChosen={isChosen} charOne={charOne} charTwo={charTwo}>
             <img alt={name} src={image}></img>
             <h3>{name}</h3>
             <div>
@@ -35,3 +45,15 @@ function CharacterCard({ character, charOne, setCharOne, charTwo, setCharTwo, on
 }
 
 export default CharacterCard;
+
+// if (!isChosen){
+//     if(!charOne){
+//         setCharOne(character);
+//         setIsClicked(true);
+//     }
+//     else{
+//         setCharTwo(character);
+//         setIsClicked(true);
+//         onCharacterChosen();
+//     }
+// } 
