@@ -7,6 +7,7 @@ function SaveDuelForm({
   charOnePoints,
   charTwoPoints,
   outcome,
+  handleShowToastMessage
 }) {
   const [feedback, setFeedback] = useState("");
 
@@ -25,8 +26,12 @@ function SaveDuelForm({
       charTwoPoints,
       outcome,
       dateTime,
-      feedback,
+      feedback
     };
+
+    // function showToastMessage(){
+    //   handleShowToastMessage();
+    // }
 
     fetch("http://localhost:3000/history", {
       method: "POST",
@@ -38,7 +43,7 @@ function SaveDuelForm({
       .then((res) => res.json())
       .then((savedDuel) => {
         console.log(savedDuel);
-        alert("Duel successfully saved!");
+        handleShowToastMessage();
       });
   }
   return (

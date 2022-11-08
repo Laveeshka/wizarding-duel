@@ -70,4 +70,12 @@ export const StyledRoundsContainer = styled.section`
     }
 
 }
+
+.toast-message {
+  background: #d8dbe2;
+  color: #312244;
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
+}
+
 `;

@@ -1,6 +1,9 @@
 import { StyledRoundsContainer } from "./RoundsContainer.styled";
 import { CharacterScore, SaveDuelForm } from "../../components";
 import { useState, useEffect, useRef } from "react";
+//import react toastify package
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function RoundsContainer({ charOne, charTwo, spells }) {
   const [round, setRound] = useState(1);
@@ -31,6 +34,13 @@ function RoundsContainer({ charOne, charTwo, spells }) {
       outcomeMessage.current = `It is a tie!`;
     }
     setShowOutcome((prevState) => !prevState);
+  }
+
+  function handleShowToastMessage(){
+    toast("Duel successfully saved!", {
+      position: toast.POSITION.BOTTOM_CENTER,
+      className: 'toast-message'
+    });
   }
 
   //   console.log("charOnePoints is: ", charOnePoints);
@@ -67,9 +77,11 @@ function RoundsContainer({ charOne, charTwo, spells }) {
             charTwo={charTwo}
             charTwoPoints={charTwoPoints}
             outcome={outcomeMessage.current}
+            handleShowToastMessage={handleShowToastMessage}
           />
         </div>
       ) : null}
+      <ToastContainer />
     </StyledRoundsContainer>
   );
 }
