@@ -67,13 +67,13 @@ export const StyledCharacterCard = styled.div`
         background-color: ${({ house }) => {
             switch (house) {
                 case "Gryffindor":
-                    return "#a72608";
+                    return "#952923";
                 case "Ravenclaw":
-                    return "#386fa4";
+                    return "#1a2760";
                 case "Hufflepuff":
-                    return "#d5ac4e";
+                    return "#de9502";
                 case "Slytherin":
-                    return "#2C514C";
+                    return "#0f574e";
                 default:
                     return "#2C514C";
             }
