@@ -32,7 +32,7 @@ function SaveDuelForm({
     };
 
 
-    fetch("http://localhost:3000/history", {
+    fetch("https://wizarding-duel-saved-duels.herokuapp.com/history", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

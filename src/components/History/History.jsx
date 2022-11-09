@@ -4,7 +4,7 @@ import useQuery from "../../hooks/useQuery";
 
 function History() {
   const { data: savedDuels, isLoaded } = useQuery(
-    "http://localhost:3000/history"
+    "https://wizarding-duel-saved-duels.herokuapp.com/history"
   );
 
   return (

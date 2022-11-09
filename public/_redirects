@@ -1,0 +1,6 @@
+# Redirects from what the browser requests to what we serve
+
+/               /
+/duel           /duel
+/duel/start     /duel/start
+/history        /history
