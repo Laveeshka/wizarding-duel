@@ -43,9 +43,6 @@ function RoundsContainer({ charOne, charTwo, spells }) {
     });
   }
 
-  //   console.log("charOnePoints is: ", charOnePoints);
-  //   console.log("charTwoPoints is: ", charTwoPoints);
-
   return (
     <StyledRoundsContainer>
       <h2>Round {round} of 3</h2>

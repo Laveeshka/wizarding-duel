@@ -1,5 +1,6 @@
 import { StyledSaveDuelForm } from "./SaveDuelForm.styled";
 import { useState } from "react";
+import { useHistory } from 'react-router-dom';
 
 function SaveDuelForm({
   charOne,
@@ -10,6 +11,7 @@ function SaveDuelForm({
   handleShowToastMessage
 }) {
   const [feedback, setFeedback] = useState("");
+  const history = useHistory();
 
   function handleChange(event) {
     setFeedback(event.target.value);
@@ -29,9 +31,6 @@ function SaveDuelForm({
       feedback
     };
 
-    // function showToastMessage(){
-    //   handleShowToastMessage();
-    // }
 
     fetch("http://localhost:3000/history", {
       method: "POST",
@@ -44,6 +43,9 @@ function SaveDuelForm({
       .then((savedDuel) => {
         console.log(savedDuel);
         handleShowToastMessage();
+        setTimeout(() => history.push("/history"), 4000);
+        
+
       });
   }
   return (

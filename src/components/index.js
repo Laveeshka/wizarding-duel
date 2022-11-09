@@ -1,5 +1,3 @@
-import SavedDuelCard from './SavedDuelCard/SavedDuelCard';
-
 //This file will allow us to import components from one file
 export { default as Burger } from './Burger';
 export { default as LeftNavMenu } from './LeftNavMenu';
