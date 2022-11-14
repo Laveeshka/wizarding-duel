@@ -55,18 +55,24 @@ export const StyledRoundsContainer = styled.section`
     margin-bottom: 2rem;
     width: 70%;
     height: auto;
-    background-color: #44305f;
+    background-color: ${({ theme }) => theme.primaryColourLight};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     gap: 1rem;
     padding: 2rem;
+    text-align: center;
     -webkit-mask-image: url("${outcomeMask}");
     -webkit-mask-size: cover;
 
     h1 {
       font-size: 1.7rem;
+    }
+
+    @media (max-width: ${({ theme }) => theme.tablet}) {
+      -webkit-mask-image: none;
+      border-radius: 2rem;
     }
 
 }
