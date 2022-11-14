@@ -4,7 +4,7 @@ import maskBlock from "../../images/mask_block.svg"
 export const StyledSavedDuelCard = styled.div`
     width: 100%;
     height: 100%;
-    background-color: ${({ theme }) => theme.savedDuelCardBackgroundColor};
+    background-color: ${({ theme }) => theme.primaryColourLight};
     padding: 5rem 2rem 3rem 2rem;
     -webkit-mask-image: url("${maskBlock}");
     -webkit-mask-size:cover;
@@ -12,8 +12,8 @@ export const StyledSavedDuelCard = styled.div`
     span.date-time {
         font-size: 0.9rem;
         text-align: center;
-        background-color: ${({ theme }) => theme.savedDuelCardSpanBackgroundColor};
-        color: ${({ theme }) => theme.savedDuelCardSpanTextColor};
+        background-color: ${({ theme }) => theme.tertiaryColour};
+        color: ${({ theme }) => theme.primaryColourLight};
         padding: 0.2rem 0.5rem;
         border-radius: 1rem;
     }
@@ -45,7 +45,7 @@ export const StyledSavedDuelCard = styled.div`
                     width: 200px;
                     height: 200px;
                     border-radius: 100%;
-                    border: 6px solid ${({ theme }) => theme.savedDuelCardImgColor};
+                    border: 6px solid ${({ theme }) => theme.secondaryColourLight};
                 }
 
                 span {
@@ -55,7 +55,7 @@ export const StyledSavedDuelCard = styled.div`
                     transform: translateX(-50%);
                     text-align: center;
                     white-space: nowrap;
-                    background-color: ${({ theme }) => theme.savedDuelCardImgColor};
+                    background-color: ${({ theme }) => theme.secondaryColourLight};
                     padding: 0.2rem 0.5rem;
                     border-radius: 1rem;
                 }
@@ -82,7 +82,7 @@ export const StyledSavedDuelCard = styled.div`
 
         .line {
             height: 2px;
-            background-color: ${({ theme }) => theme.savedDuelCardLineColor};
+            background-color: ${({ theme }) => theme.secondaryColourLight};
         }
 
         small {

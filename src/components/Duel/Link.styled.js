@@ -7,9 +7,9 @@ export const StyledLink = styled(Link)`
   font-weight: 600;
   padding: 0.5rem 1.2rem;
   border-radius: 1rem;
-  background-color: ${({ theme }) => theme.buttonAccentColor};
-  color: ${({ theme }) => theme.buttonAccentTextColor};
-  box-shadow: 0 0.4rem ${({ theme }) => theme.buttonAccentBoxShadowColor};
+  background-color: ${({ theme }) => theme.tertiaryColour};
+  color: ${({ theme }) => theme.tertiaryButtonTextColour};
+  box-shadow: 0 0.4rem ${({ theme }) => theme.tertiaryButtonShadowColour};
   cursor: pointer;
   position: absolute;
   top: 30%;
@@ -18,11 +18,11 @@ export const StyledLink = styled(Link)`
 
   &:hover {
     transform: translateX(-50%) translateY(-32%);
-    box-shadow: 0 0.2rem ${({ theme }) => theme.buttonAccentBoxShadowColor};
+    box-shadow: 0 0.2rem ${({ theme }) => theme.tertiaryButtonShadowColour};
   }
 
   &:active {
     transform: translateX(-50%) translateY(-35%);
-    box-shadow: 0 0 ${({ theme }) => theme.buttonAccentBoxShadowColor};
+    box-shadow: 0 0 ${({ theme }) => theme.tertiaryButtonShadowColour};
   }
 `;

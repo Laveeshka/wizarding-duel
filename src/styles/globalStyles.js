@@ -7,8 +7,8 @@ export const GlobalStyles = createGlobalStyle`
     html, body {
         margin: 0;
         padding: 0;
-        background: ${({theme}) => theme.primaryBackground}; 
-        color: ${({theme}) => theme.primaryText};
+        background: ${({theme}) => theme.primaryColour}; 
+        color: ${({theme}) => theme.primaryTextColour};
     }
 
     *, *::after, *::before {
@@ -17,7 +17,7 @@ export const GlobalStyles = createGlobalStyle`
 
     #app {
         
-        font-family: 'El Messiri', sans-serif;
+        font-family: ${({ theme }) => theme.fontFamily};
     }
 
     h1 {

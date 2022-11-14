@@ -12,7 +12,7 @@ export const StyledHome = styled.div`
         h2 {
             text-align: center;
             font-size: 2rem;
-            color: ${({ theme }) => theme.accentText};
+            color: ${({ theme }) => theme.tertiaryTextColour};
         }
         h3 {
             text-align: center;
@@ -40,7 +40,7 @@ export const StyledHome = styled.div`
             div.dueller-name {
                 font-size: 1.4rem;
                 font-weight: 800;
-                color: ${({ theme }) => theme.accentText};
+                color: ${({ theme }) => theme.tertiaryTextColour};
             }
         }
 
@@ -57,27 +57,27 @@ export const StyledHome = styled.div`
             font-weight: 600;
             padding: 0.5rem 1.2rem;
             border-radius: 1rem;
-            background-color: ${({ theme }) => theme.buttonAccentColor};
-            color: ${({ theme }) => theme.buttonAccentTextColor};
-            box-shadow: 0 0.4rem ${({ theme }) => theme.buttonAccentBoxShadowColor};
+            background-color: ${({ theme }) => theme.tertiaryColour};
+            color: ${({ theme }) => theme.tertiaryButtonTextColour};
+            box-shadow: 0 0.4rem ${({ theme }) => theme.tertiaryButtonShadowColour};
             cursor: pointer;
             position: relative;
 
             &:hover{
                 top: 2px;
-                box-shadow: 0 0.2rem ${({ theme }) => theme.buttonAccentBoxShadowColor};
+                box-shadow: 0 0.2rem ${({ theme }) => theme.tertiaryButtonShadowColour};
             }
 
             &:active{
                 top: 4px;
-                box-shadow: 0 0 ${({ theme }) => theme.buttonAccentBoxShadowColor};
+                box-shadow: 0 0 ${({ theme }) => theme.tertiaryButtonShadowColour};
             }
         }
 
         button {
             background-color: transparent;
             border: none;
-            color: ${({ theme }) => theme.primaryText};
+            color: ${({ theme }) => theme.primaryTextColour};
             font-family: ${({ theme }) => theme.fontFamily};
             font-size: 1.1rem;
             text-decoration: underline;

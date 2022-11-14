@@ -8,13 +8,3 @@ export const StyledNav = styled.nav`
   justify-content: center;
   background-color: ${({ theme }) => theme.darkNavBackground};
 `;
-
-// .logo {
-//   right: 1rem;
-//   align-self: center;
-//   padding: 1rem 0;
-
-//   @media (max-width: ${({ theme }) => theme.tablet}){
-//     display: none;
-//   }
-// }

@@ -9,7 +9,7 @@ export const StyledHistory = styled.section`
   h2 {
     text-align: center;
     font-size: 1.5rem;
-    color: ${({ theme }) => theme.accentText };
+    color: ${({ theme }) => theme.tertiaryTextColour };
   }
 
   div.saved-duels-container {

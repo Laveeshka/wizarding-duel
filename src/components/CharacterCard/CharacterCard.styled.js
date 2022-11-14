@@ -13,13 +13,13 @@ export const StyledCharacterCard = styled.div`
     background-color: ${({ isClicked}) => 
         {
             if (isClicked){
-                return "#04463b";
+                return ({ theme }) => theme.secondaryColourLight;
             }
             else {
-                return "#01372e";
+                return ({ theme }) => theme.secondaryColour;
             }
         }};
-    box-shadow: inset 0 -6px 0 #012721;
+    box-shadow: inset 0 -6px 0 ${({ theme }) => theme.secondaryColourDark};
     position: relative;
     overflow: hidden;
     border: ${({ isClicked, theme }) => {
@@ -45,7 +45,7 @@ export const StyledCharacterCard = styled.div`
     }
 
     &:hover {
-        background-color: #04463b;
+        background-color: ${({ theme }) => theme.secondaryColourLight};
         transform: translateY(-0.5rem);
     }
 
@@ -64,18 +64,18 @@ export const StyledCharacterCard = styled.div`
     }
 
     div {
-        background-color: ${({ house }) => {
+        background-color: ${({ house, theme }) => {
             switch (house) {
                 case "Gryffindor":
-                    return "#952923";
+                    return theme.gryffindorColour;
                 case "Ravenclaw":
-                    return "#1a2760";
+                    return theme.ravenclawColour;
                 case "Hufflepuff":
-                    return "#de9502";
+                    return theme.hufflepuffColour;
                 case "Slytherin":
-                    return "#0f574e";
+                    return theme.slytherinColour;
                 default:
-                    return "#2C514C";
+                    return theme.defaultHouseColour;
             }
         }};
         position: absolute;
@@ -101,6 +101,3 @@ export const StyledCharacterCard = styled.div`
     }
 `;
 
-//     isClicked? "#04463b" : "#01372e"
-
-// isClicked? theme.cardBorder : "none"

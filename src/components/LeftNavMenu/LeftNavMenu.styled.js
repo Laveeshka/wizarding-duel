@@ -10,11 +10,11 @@ export const StyledLeftNavMenu = styled.nav`
   a {
     font-weight: bold;
     letter-spacing: 0.4rem;
-    color: ${({ theme }) => theme.primaryText};
+    color: ${({ theme }) => theme.primaryTextColour};
     text-decoration: none;
     padding: 0.5rem 0.3rem;
     border-radius: 0.3rem;
-    transition: color 0.3s ease-in-ou, background-color 0.3s ease-in-ou;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
     &:hover {
       color: ${({ theme }) => theme.navLinkHoverColor};

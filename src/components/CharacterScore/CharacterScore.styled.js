@@ -9,11 +9,11 @@ export const StyledCharacterScore = styled.div`
     width: 100px;
     padding: 1rem 1.25rem;
 
-    background: #44305f;
+    background: ${({ theme }) => theme.primaryColourLight};
     height: auto;
     position: relative;
     margin: 0 auto;
-    border: 1px solid #d8dbe2;
+    border: 1px solid ${({ theme }) => theme.primaryBorderColour};
     border-bottom: 0;
     border-radius: 0.125rem;
     z-index: 2;
@@ -21,7 +21,7 @@ export const StyledCharacterScore = styled.div`
     &::before {
       border-left: 50px solid transparent;
       border-right: 50px solid transparent;
-      border-top: 25px solid #d8dbe2;
+      border-top: 25px solid ${({ theme }) => theme.primaryBorderColour};
       bottom: -24px;
 
       content: "";
@@ -34,7 +34,7 @@ export const StyledCharacterScore = styled.div`
     &::after {
       border-left: 50px solid transparent;
       border-right: 50px solid transparent;
-      border-top: 25px solid #44305f;
+      border-top: 25px solid ${({ theme }) => theme.primaryColourLight};
       bottom: -22px;
 
       content: "";
@@ -56,7 +56,7 @@ export const StyledCharacterScore = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: #44305f;
+    background-color: ${({ theme }) => theme.primaryColourLight};
     padding: 0.5rem 1rem;
     gap: 0;
     border-radius: 0 0.5rem 0.5rem 0;
@@ -68,7 +68,3 @@ export const StyledCharacterScore = styled.div`
   }
 
 `;
-
-    // border-top: 1px solid #d8dbe2;
-    // border-right: 1px solid #d8dbe2;
-    // border-bottom: 1px solid #d8dbe2;

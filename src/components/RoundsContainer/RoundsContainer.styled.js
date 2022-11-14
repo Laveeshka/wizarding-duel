@@ -13,7 +13,7 @@ export const StyledRoundsContainer = styled.section`
   h2 {
     text-align: center;
     font-size: 1.5rem;
-    color: ${({ theme }) => theme.accentText};
+    color: ${({ theme }) => theme.tertiaryTextColour};
   }
 
   .spells-container {
@@ -37,20 +37,20 @@ export const StyledRoundsContainer = styled.section`
     padding: 0.5rem 1.2rem;
     border-radius: 1rem;
     border: none;
-    background-color: ${({ theme }) => theme.buttonAccentColor};
-    color: ${({ theme }) => theme.buttonAccentTextColor};
-    box-shadow: 0 0.4rem ${({ theme }) => theme.buttonAccentBoxShadowColor};
+    background-color: ${({ theme }) => theme.tertiaryColour};
+    color: ${({ theme }) => theme.tertiaryButtonTextColour};
+    box-shadow: 0 0.4rem ${({ theme }) => theme.tertiaryButtonShadowColour};
     cursor: pointer;
     position: relative;
 
     &:hover{
         top: 2px;
-        box-shadow: 0 0.2rem ${({ theme }) => theme.buttonAccentBoxShadowColor};
+        box-shadow: 0 0.2rem ${({ theme }) => theme.tertiaryButtonShadowColour};
     }
 
     &:active{
         top: 4px;
-        box-shadow: 0 0 ${({ theme }) => theme.buttonAccentBoxShadowColor};
+        box-shadow: 0 0 ${({ theme }) => theme.tertiaryButtonShadowColour};
     }
 }
 
@@ -83,7 +83,7 @@ export const StyledRoundsContainer = styled.section`
 }
 
 .toast-message {
-  background: #d8dbe2;
+  background: ${({ theme }) => theme.toastMessageColour};
   color: #312244;
   font-size: 1rem;
   padding: 0.5rem 0.8rem;
