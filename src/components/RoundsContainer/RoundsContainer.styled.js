@@ -20,8 +20,13 @@ export const StyledRoundsContainer = styled.section`
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
+
+    media (max-width: ${({ theme }) => theme.tablet}){
+      gap: 1rem;
+    }
   }
 
   button {
