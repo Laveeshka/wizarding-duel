@@ -14,10 +14,6 @@ function CharacterScore({ char, spells, onAddPoints, isComplete }){
         }
     }, [isComplete]);
 
-    // const randomIndex = getRandom(0, spells.length - 1);
-    // const randomSpell = spells[randomIndex];
-    //console.log("random spell is: ", randomSpell);
-
     if(!isComplete){
         randomIndex.current = getRandom(0, spells.length - 1);
         randomSpell.current = spells[randomIndex.current];
@@ -31,11 +27,9 @@ function CharacterScore({ char, spells, onAddPoints, isComplete }){
             <div className="total-points-container">
                 <div>{totalPoints.current}</div>
             </div>
-            {/* <h3>{char.name}</h3> */}
             <div className="spell-container">
             <p>Used {randomSpell.current.name.toUpperCase()}</p>
             <p>Gained {randomSpell.current.points} points</p>
-            {/* <p>Total points: {totalPoints.current}</p> */}
             </div>
             
         </StyledCharacterScore>

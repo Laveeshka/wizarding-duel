@@ -8,7 +8,7 @@ export const StyledChosenCharacterCard = styled.div`
       width: 200px;
       height: 200px;
       border-radius: 100%;
-      border: 6px solid ${({ theme }) => theme.savedDuelCardImgColor};
+      border: 6px solid ${({ theme }) => theme.secondaryColourLight};
     }
 
     span {
@@ -18,7 +18,7 @@ export const StyledChosenCharacterCard = styled.div`
       transform: translateX(-50%);
       text-align: center;
       white-space: nowrap;
-      background-color: ${({ theme }) => theme.savedDuelCardImgColor};
+      background-color: ${({ theme }) => theme.secondaryColourLight};
       padding: 0.2rem 0.5rem;
       border-radius: 1rem;
     }

@@ -39,21 +39,9 @@ function CharacterCard({ character, charOne, setCharOne, charTwo, setCharTwo, on
                 <h2>{house[0]}</h2>
             </div>
             <span>Dueller 1</span>
-            {/* <button onClick={handleCharacterClick}>Choose</button> */}
         </StyledCharacterCard>
     )
 }
 
 export default CharacterCard;
 
-// if (!isChosen){
-//     if(!charOne){
-//         setCharOne(character);
-//         setIsClicked(true);
-//     }
-//     else{
-//         setCharTwo(character);
-//         setIsClicked(true);
-//         onCharacterChosen();
-//     }
-// } 

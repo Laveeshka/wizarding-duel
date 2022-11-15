@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { StyledHome } from "./Home.styled";
+import Dueller from "./Dueller";
 //import the useQuery custom hook to fetch characters data from the API
 import useQuery from "../../hooks/useQuery";
 //import(s) from react-router-dom
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CharacterContainer } from "../../components";
 
 function Home({
@@ -35,18 +35,8 @@ function Home({
         <h2>Wizarding Duel</h2>
         <h3>Choose two wizards for duel</h3>
         <div className="dueller-container">
-          <div className="dueller">
-            <div className="text-italic">First dueller</div>
-            <div className="dueller-name">
-              {!charOne ? "Not yet selected!" : charOne.name}
-            </div>
-          </div>
-          <div className="dueller">
-            <div className="text-italic">Second dueller</div>
-            <div className="dueller-name">
-              {!charTwo ? "Not yet selected!" : charTwo.name}
-            </div>
-          </div>
+          <Dueller char={charOne}/>
+          <Dueller char={charTwo}/>
         </div>
         <div className="button-container">
           {isChosen ? <Link to="/duel">Start Duel</Link> : null}

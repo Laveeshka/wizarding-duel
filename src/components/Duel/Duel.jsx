@@ -1,4 +1,4 @@
-import { Redirect, Route, useRouteMatch, Link } from "react-router-dom";
+import { Route, useRouteMatch, Link } from "react-router-dom";
 import { useState } from 'react';
 import { StyledDuel} from "./Duel.styled";
 import { StyledLink } from "./Link.styled";
@@ -23,7 +23,7 @@ function Duel({ isChosen, charOne, charTwo, spells }) {
       {isChosen ? (
         <StyledDuel>
           <ChosenCharacters charOne={charOne} charTwo={charTwo} />
-          { !isStarted ? <Link to={"/duel/start"} onClick={handleStartDuelClick}>Start Duel!</Link> : null}
+          { !isStarted ? <Link to={`${match.url}/start`} onClick={handleStartDuelClick}>Start Duel!</Link> : null}
           
           {/* we use the current URL from the `match` object as part of the path; this will generate a url "/duel/start" */}
           <Route path={`${match.url}/start`}>

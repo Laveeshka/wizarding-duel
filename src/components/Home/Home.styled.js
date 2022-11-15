@@ -27,23 +27,6 @@ export const StyledHome = styled.div`
             margin-bottom: 1.5rem;
         }
 
-        div.dueller {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-
-            div.text-italic {
-                font-style: italic;
-            }
-
-            div.dueller-name {
-                font-size: 1.4rem;
-                font-weight: 800;
-                color: ${({ theme }) => theme.tertiaryTextColour};
-            }
-        }
-
         div.button-container {
             display: flex;
             flex-direction: column;
