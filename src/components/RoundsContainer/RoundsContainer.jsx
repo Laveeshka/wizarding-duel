@@ -4,6 +4,10 @@ import { useState, useEffect, useRef } from "react";
 //import react toastify package
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+//import sound
+import noGoodSound from '../../sounds/nogood.mp3';
+import mischiefManagedSound from '../../sounds/mischief.mp3';
+import callMySound from "../../utils/callMySound";
 
 function RoundsContainer({ charOne, charTwo, spells }) {
   const [round, setRound] = useState(1);
@@ -14,11 +18,14 @@ function RoundsContainer({ charOne, charTwo, spells }) {
   const outcomeMessage = useRef("");
 
   useEffect(() => {
+    //play sound on mount and every time the value of round state changes
+    callMySound(noGoodSound);
+
     if (round === 3) {
-      console.log("round is: ", round);
+      //console.log("round is: ", round);
       setIsComplete(!isComplete);
     }
-    console.log("isComplete is: ", isComplete);
+    //console.log("isComplete is: ", isComplete);
   }, [round]);
 
   function handleNextRoundClick() {
@@ -26,6 +33,8 @@ function RoundsContainer({ charOne, charTwo, spells }) {
   }
 
   function handleShowOutcomeClick() {
+    callMySound(mischiefManagedSound);
+
     if (charOnePoints > charTwoPoints) {
       outcomeMessage.current = `${charOne.name} wins`;
     } else if (charOnePoints < charTwoPoints) {

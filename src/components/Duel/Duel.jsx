@@ -5,8 +5,10 @@ import { StyledLink } from "./Link.styled";
 import { StyledSection } from "./Section.styled";
 import { ChosenCharacters, RoundsContainer } from "../../components";
 
+
 function Duel({ isChosen, charOne, charTwo, spells }) {
   const [isStarted, setIsStarted] = useState(false);
+
   //useRouteMatch returns a special object with information about the currently matched route
   const match = useRouteMatch();
   console.log(match);
@@ -35,7 +37,7 @@ function Duel({ isChosen, charOne, charTwo, spells }) {
           </Route>
         </StyledDuel>
       ) : (
-        <StyledLink className="redirect-link" exact to={"/"}>
+        <StyledLink className="redirect-link" to={"/"}>
           Choose two wizards first!
         </StyledLink>
       )}
