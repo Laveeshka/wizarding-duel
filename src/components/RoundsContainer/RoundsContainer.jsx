@@ -38,9 +38,9 @@ function RoundsContainer({ charOne, charTwo, spells }) {
     callMySound(mischiefManagedSound);
 
     if (charOnePoints > charTwoPoints) {
-      outcomeMessage.current = `${charOne.name} wins`;
+      outcomeMessage.current = `${charOne.character} wins`;
     } else if (charOnePoints < charTwoPoints) {
-      outcomeMessage.current = `${charTwo.name} wins`;
+      outcomeMessage.current = `${charTwo.character} wins`;
     } else {
       outcomeMessage.current = `It is a tie!`;
     }

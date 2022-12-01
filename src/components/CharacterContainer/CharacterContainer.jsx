@@ -13,7 +13,7 @@ function CharacterContainer({
   const characterCardComponents = characters.map((character, index) => (
     <CharacterCard
       key={index}
-      character={character}
+      char={character}
       charOne={charOne}
       setCharOne={setCharOne}
       charTwo={charTwo}

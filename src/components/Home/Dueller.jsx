@@ -5,7 +5,7 @@ function Dueller({ char }){
         <StyledDueller>
             <div className="text-italic">First dueller</div>
             <div className="dueller-name">
-              {!char ? "Not yet selected!" : char.name}
+              {!char ? "Not yet selected!" : char.character}
             </div>
         </StyledDueller>
     )

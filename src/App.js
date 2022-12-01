@@ -20,7 +20,7 @@ function App() {
   //GET spells from API here
   //then, append a random points to each spell object
   //pass the updated spells array as a prop to the Duel component
-  const baseSpellsUrl = "https://hp-api.herokuapp.com/api/spells";
+  const baseSpellsUrl = "https://fedeperin-harry-potter-api-en.herokuapp.com/spells";
   const { data: spells, isLoaded } = useQuery(baseSpellsUrl);
   //console.log("Spells data is: ",spells);
 

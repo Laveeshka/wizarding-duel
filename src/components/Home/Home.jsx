@@ -14,7 +14,7 @@ function Home({
   setCharTwo,
   setIsChosen,
 }) {
-  const baseCharacterUrl = "https://hp-api.herokuapp.com/api/characters";
+  const baseCharacterUrl = "https://fedeperin-harry-potter-api-en.herokuapp.com/characters";
   const { data: charactersData, isLoaded } = useQuery(baseCharacterUrl);
 
   function handleChosenCharacters() {

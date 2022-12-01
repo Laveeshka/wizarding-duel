@@ -18,8 +18,8 @@ function SavedDuelCard({ savedDuel }) {
       <div className="characters-container">
         <div className="character-container">
           <div className="character-img-container">
-            <img alt={charOne.name} src={charOne.image} />
-            <span>{charOne.name}</span>
+            <img alt={charOne.character} src={charOne.image} />
+            <span>{charOne.character}</span>
           </div>
           <div className="score">
             <p>FINAL SCORE</p>
@@ -28,8 +28,8 @@ function SavedDuelCard({ savedDuel }) {
         </div>
         <div className="character-container">
           <div className="character-img-container">
-            <img alt={charTwo.name} src={charTwo.image} />
-            <span>{charTwo.name}</span>
+            <img alt={charTwo.character} src={charTwo.image} />
+            <span>{charTwo.character}</span>
           </div>
           <div className="score">
             <p>FINAL SCORE</p>

@@ -7,18 +7,22 @@ function useQuery(url) {
   const [data, setData] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  //oldURL = https://hp-api.herokuapp.com/api/characters
+
+  const baseUrl = "https://fedeperin-harry-potter-api-en.herokuapp.com";
+
   useEffect(() => {
     setIsLoaded(false);
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        if (url === "https://hp-api.herokuapp.com/api/characters") {
+        if (url === `${baseUrl}/characters`) {
           //filter characters who belong to a house and have an image
           const houseSortedData = data.filter(
-            (character) => character.house !== "" && character.image !== ""
+            (character) => character.hogwartsHouse !== "" && character.image !== ""
           );
           setData(houseSortedData);
-        } else if (url === "https://hp-api.herokuapp.com/api/spells") {
+        } else if (url === `${baseUrl}/spells`) {
           const spellsArray = [];
           for (let spell of data) {
             const randomNum = getRandom(1, 10);

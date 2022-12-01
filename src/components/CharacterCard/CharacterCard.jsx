@@ -1,19 +1,19 @@
 import { StyledCharacterCard } from "./CharacterCard.styled";
 import { useState } from 'react';
 
-function CharacterCard({ character, charOne, setCharOne, charTwo, setCharTwo, onCharacterChosen, isChosen}){
+function CharacterCard({ char, charOne, setCharOne, charTwo, setCharTwo, onCharacterChosen, isChosen}){
     //destructure properties that we need from character object
-    const { name, house, image} = character;
+    const {character, hogwartsHouse, image} = char;
     const [isClicked, setIsClicked] = useState(false);
 
     function handleCharacterClick(){
         if (!isClicked){
             if(!charOne){
-                setCharOne(character);
+                setCharOne(char);
                 setIsClicked(true);
             }
             else{
-                setCharTwo(character);
+                setCharTwo(char);
                 setIsClicked(true);
                 onCharacterChosen();
             }
@@ -32,11 +32,11 @@ function CharacterCard({ character, charOne, setCharOne, charTwo, setCharTwo, on
     }
 
     return (
-        <StyledCharacterCard house={house} onClick={handleCharacterClick} isClicked={isClicked} isChosen={isChosen} charOne={charOne} charTwo={charTwo}>
-            <img alt={name} src={image}></img>
-            <h3>{name}</h3>
+        <StyledCharacterCard house={hogwartsHouse} onClick={handleCharacterClick} isClicked={isClicked} isChosen={isChosen} charOne={charOne} charTwo={charTwo}>
+            <img alt={character} src={image}></img>
+            <h3>{character}</h3>
             <div>
-                <h2>{house[0]}</h2>
+                <h2>{hogwartsHouse[0]}</h2>
             </div>
             <span>Dueller 1</span>
         </StyledCharacterCard>

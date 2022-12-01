@@ -18,7 +18,7 @@ function CharacterScore({ char, spells, onAddPoints, isComplete }){
         randomIndex.current = getRandom(0, spells.length - 1);
         randomSpell.current = spells[randomIndex.current];
         totalPoints.current = totalPoints.current + randomSpell.current.points;
-        console.log("total points for ", char.name," is ", totalPoints.current);
+        console.log("total points for ", char.character," is ", totalPoints.current);
     }
     
 
@@ -28,7 +28,7 @@ function CharacterScore({ char, spells, onAddPoints, isComplete }){
                 <div>{totalPoints.current}</div>
             </div>
             <div className="spell-container">
-            <p>Used {randomSpell.current.name.toUpperCase()}</p>
+            <p>Used {randomSpell.current.spell.toUpperCase()}</p>
             <p>Gained {randomSpell.current.points} points</p>
             </div>
             
